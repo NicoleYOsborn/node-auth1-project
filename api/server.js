@@ -10,8 +10,8 @@ const authRouter = require("./auth/auth-router.js");
 const server = express();
 
 const sessionConfig = {
-  name: "monkey",
-  secret: "keep it secret...",
+  name: "nameme",
+  secret: "I'm a secret",
   cookie: {
     maxAge: 1000 * 60 * 60,
     secure: false,
@@ -20,7 +20,7 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: false,
   store: new KnexSessionStore({
-    knex: require('../database/connection'),
+    knex: require('../database/connections.js'),
     tablename: 'sessions',
     sidfieldname: 'sid',
     createtable: true,
