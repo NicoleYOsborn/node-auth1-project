@@ -34,7 +34,7 @@ router.post('/login', (req, res) => {
                 });
             } else {
                 res.status(401).json({
-                    message: 'invalid credentials'
+                    message: 'You shall not pass!'
                 })
             }
         })
@@ -49,9 +49,9 @@ router.get('/logout', (req, res) => {
         req.session.destroy(err => {
             if (err) {
                 console.log(err);
-                res.send('you can check out anytime you like, but you can never leave');
+                res.send('Error logging out');
             } else {
-                res.send('so long and thanks for all the fish');
+                res.send('Thank you, come again!');
             }
         });
     } else {

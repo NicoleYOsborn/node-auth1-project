@@ -10,7 +10,7 @@ const authRouter = require("./auth/auth-router.js");
 const server = express();
 
 const sessionConfig = {
-  name: "nameme",
+  name: "session",
   secret: "I'm a secret",
   cookie: {
     maxAge: 1000 * 60 * 60,
